@@ -41,5 +41,5 @@ const config = {
     // React rules
     "react/self-closing-comp": ["error"],
   },
-};
-module.exports = config;
+}
+module.exports = config
