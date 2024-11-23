@@ -1,0 +1,17 @@
+# next.js
+.next
+next-env.d.ts
+next.config.js
+
+# lockfiles
+package-lock.json
+pnpm-lock.yaml
+
+# dependencies
+node_modules
+
+# tailwind
+tailwind.config.ts
+
+# UI components (e.g., shadcn/ui)
+/src/components/ui/*
