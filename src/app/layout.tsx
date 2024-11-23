@@ -1,13 +1,16 @@
-import "~/styles/globals.css"
-
-import { Geist } from "next/font/google"
-
 import { type Metadata } from "next"
-
+import { Geist } from "next/font/google"
+import { ThemeProvider } from "~/components/theme/provider"
+import "~/styles/globals.css"
 import { TRPCReactProvider } from "~/trpc/react"
 
 const geistSans = Geist({
   subsets: ["latin"],
+  variable: "--font-geist-sans",
+  display: "swap",
+  preload: true,
+  weight: "400",
+  fallback: ["system-ui", "sans-serif"],
 })
 
 export const metadata: Metadata = {
@@ -20,9 +23,16 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={geistSans.className}>
+    <html lang="en" suppressHydrationWarning className={geistSans.className}>
       <body>
-        <TRPCReactProvider>{children}</TRPCReactProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <TRPCReactProvider>{children}</TRPCReactProvider>{" "}
+        </ThemeProvider>
       </body>
     </html>
   )
