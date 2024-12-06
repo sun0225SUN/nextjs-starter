@@ -1,21 +1,11 @@
 import { type Metadata } from "next"
 import { NextIntlClientProvider } from "next-intl"
 import { getMessages } from "next-intl/server"
-import { Geist } from "next/font/google"
 import { notFound } from "next/navigation"
 import { ThemeProvider } from "~/components/theme/provider"
 import { routing } from "~/i18n/routing"
 import "~/styles/globals.css"
 import { TRPCReactProvider } from "~/trpc/react"
-
-const geistSans = Geist({
-  subsets: ["latin"],
-  variable: "--font-geist-sans",
-  display: "swap",
-  preload: true,
-  weight: "400",
-  fallback: ["system-ui", "sans-serif"],
-})
 
 export const metadata: Metadata = {
   title: "Create T3 App",
@@ -46,11 +36,7 @@ export default async function LocaleLayout({
   const messages = await getMessages()
 
   return (
-    <html
-      lang={locale}
-      suppressHydrationWarning
-      className={geistSans.className}
-    >
+    <html lang={locale} suppressHydrationWarning>
       <body>
         <NextIntlClientProvider messages={messages}>
           <TRPCReactProvider>
