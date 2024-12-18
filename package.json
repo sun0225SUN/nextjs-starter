@@ -66,9 +66,5 @@
     "*/**/*.{json,css,md}": [
       "prettier --write"
     ]
-  },
-  "ct3aMetadata": {
-    "initVersion": "7.38.1"
-  },
-  "packageManager": "pnpm@9.12.3"
+  }
 }
