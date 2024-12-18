@@ -1,6 +1,6 @@
-import { z } from "zod"
+import { z } from 'zod'
 
-import { createTRPCRouter, publicProcedure } from "~/server/api/trpc"
+import { createTRPCRouter, publicProcedure } from '~/server/api/trpc'
 
 // Mocked DB
 interface Post {
@@ -10,7 +10,7 @@ interface Post {
 const posts: Post[] = [
   {
     id: 1,
-    name: "Hello World",
+    name: 'Hello World',
   },
 ]
 

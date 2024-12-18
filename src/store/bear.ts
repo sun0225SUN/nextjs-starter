@@ -1,5 +1,5 @@
-import { create } from "zustand"
-import { createJSONStorage, persist } from "zustand/middleware"
+import { create } from 'zustand'
+import { createJSONStorage, persist } from 'zustand/middleware'
 
 interface BearStore {
   bears: number
@@ -13,7 +13,7 @@ export const useBearStore = create<BearStore>()(
       addABear: () => set({ bears: get().bears + 1 }),
     }),
     {
-      name: "bear-storage",
+      name: 'bear-storage',
       storage: createJSONStorage(() => localStorage),
     },
   ),

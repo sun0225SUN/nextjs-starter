@@ -1,20 +1,22 @@
-import { createNavigation } from "next-intl/navigation"
-import { defineRouting } from "next-intl/routing"
+import { createNavigation } from 'next-intl/navigation'
+import { defineRouting } from 'next-intl/routing'
+
+export type Locale = 'zh' | 'en'
 
 export const localeMap: Record<string, string> = {
-  zh: "简体中文",
-  en: "English",
+  zh: '简体中文',
+  en: 'English',
 }
 
 export const routing = defineRouting({
   // A list of all locales that are supported
-  locales: ["zh", "en"],
+  locales: ['zh', 'en'],
 
   // Used when no locale matches
-  defaultLocale: "en",
+  defaultLocale: 'en',
 
   // never prefix the default locale
-  localePrefix: "never",
+  localePrefix: 'never',
 })
 
 // Lightweight wrappers around Next.js' navigation APIs

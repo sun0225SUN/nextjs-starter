@@ -1,7 +1,7 @@
 {
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit",
-    "source.organizeImports": "always"
+    "source.organizeImports.biome": "explicit",
+    "quickfix.biome": "explicit"
   },
   "i18n-ally.localesPaths": ["messages", "src/i18n", "src/components/language"]
 }

@@ -4,18 +4,14 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "next build",
-    "check": "next lint && tsc --noEmit",
     "dev": "next dev --turbo",
-    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,mdx}\" --cache",
-    "format:write": "prettier --write \"**/*.{ts,tsx,js,jsx,mdx}\" --cache",
-    "lint": "next lint",
-    "lint:fix": "next lint --fix",
-    "preview": "next build && next start",
-    "start": "next start",
+    "lint": "biome check ./src",
+    "lint:fix": "biome check --write ./src",
     "typecheck": "tsc --noEmit",
-    "prepare": "husky",
-    "format": "prettier --write ."
+    "build": "next build",
+    "start": "next start",
+    "preview": "next build && next start",
+    "prepare": "husky"
   },
   "dependencies": {
     "@radix-ui/react-popover": "^1.1.2",
@@ -41,30 +37,19 @@
     "zustand": "^5.0.2"
   },
   "devDependencies": {
-    "@types/eslint": "^8.56.10",
+    "@biomejs/biome": "1.9.4",
     "@types/node": "^20.14.10",
     "@types/react": "^19.0.1",
     "@types/react-dom": "^19.0.0",
-    "@typescript-eslint/eslint-plugin": "^8.1.0",
-    "@typescript-eslint/parser": "^8.18.0",
-    "eslint": "^8.57.0",
-    "eslint-config-next": "^15.1.0",
     "husky": "^9.1.7",
     "lint-staged": "^15.2.10",
     "postcss": "^8.4.39",
-    "prettier": "^3.3.2",
-    "prettier-plugin-tailwindcss": "^0.6.5",
     "tailwindcss": "^3.4.3",
     "typescript": "^5.5.3"
   },
   "lint-staged": {
-    "*/**/*.{js,jsx,ts,tsx}": [
-      "prettier --write",
-      "eslint --fix",
-      "eslint"
-    ],
-    "*/**/*.{json,css,md}": [
-      "prettier --write"
+    "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
+      "biome check --write --no-errors-on-unmatched ./src"
     ]
   }
 }
