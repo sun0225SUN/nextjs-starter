@@ -11,11 +11,11 @@ export function StoreDemo() {
   const isClient = useIsClient()
 
   if (!isClient) {
-    return null
+    return <div className='h-10' />
   }
 
   return (
-    <div className='flex h-5 items-center gap-4'>
+    <div className='flex h-10 items-center gap-4'>
       <div>{bears}</div>
       <Button onClick={addABear}>Add a Bear</Button>
     </div>

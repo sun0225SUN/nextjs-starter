@@ -14,8 +14,7 @@
     "rules": {
       "recommended": true,
       "suspicious": {
-        "noDebugger": "off",
-        "noConsoleLog": "info"
+        "noDebugger": "off"
       },
       "style": {},
       "a11y": {
