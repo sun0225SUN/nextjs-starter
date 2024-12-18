@@ -9,14 +9,12 @@ export default function Home() {
 
   return (
     <HydrateClient>
-      <div className='flex h-screen items-center justify-center'>
-        <div className='flex flex-col items-center gap-6'>
-          <StoreDemo />
+      <div className='flex h-screen flex-col items-center justify-center gap-8'>
+        <StoreDemo />
+        <div className='flex w-full items-center justify-center gap-4'>
           {t('hello')}
-          <div className='flex items-center gap-4'>
-            <ThemeToggle />
-            <LanguageToggle />
-          </div>
+          <LanguageToggle />
+          <ThemeToggle />
         </div>
       </div>
     </HydrateClient>

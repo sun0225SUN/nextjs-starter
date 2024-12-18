@@ -3,5 +3,6 @@
     "source.organizeImports.biome": "explicit",
     "quickfix.biome": "explicit"
   },
-  "i18n-ally.localesPaths": ["messages", "src/i18n", "src/components/language"]
+  "i18n-ally.localesPaths": ["messages", "src/i18n", "src/components/language"],
+  "i18n-ally.keystyle": "nested"
 }

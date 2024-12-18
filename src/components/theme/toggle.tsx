@@ -12,15 +12,9 @@ export function ThemeToggle() {
   }
 
   return (
-    <button
-      type='button'
+    <div
       onClick={toggleTheme}
-      aria-label={
-        resolvedTheme === 'light'
-          ? 'Switch to dark mode'
-          : 'Switch to light mode'
-      }
-      className='flex items-center rounded-md p-2 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:hover:bg-gray-800'
+      className='cursor-pointer'
     >
       <Sun
         className='dark:hidden'
@@ -30,6 +24,6 @@ export function ThemeToggle() {
         className='hidden dark:block'
         size={22}
       />
-    </button>
+    </div>
   )
 }

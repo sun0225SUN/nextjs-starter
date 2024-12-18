@@ -1,23 +1,29 @@
 'use client'
 
-import { Check, Languages } from 'lucide-react'
 import { useLocale } from 'next-intl'
-import { useRouter } from 'next/navigation'
+import { useState } from 'react'
 import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from '~/components/ui/popover'
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '~/components/ui/select'
 import { setUserLocale } from '~/i18n/locale'
-import { localeMap, routing } from '~/i18n/routing'
+import { localeMap, useRouter } from '~/i18n/routing'
+import { cn } from '~/lib/utils'
 
-export function LanguageToggle() {
-  const router = useRouter()
+interface LanguageToggleProps {
+  className?: string
+}
+
+export function LanguageToggle({ className }: LanguageToggleProps) {
   const currentLocale = useLocale()
-
-  const { locales } = routing
+  const router = useRouter()
+  const [selectedLocale, setSelectedLocale] = useState(currentLocale)
 
   const handleLocaleChange = (locale: string) => {
+    setSelectedLocale(locale)
     setUserLocale(locale)
       .then(() => {
         router.refresh()
@@ -28,34 +34,32 @@ export function LanguageToggle() {
   }
 
   return (
-    <Popover>
-      <PopoverTrigger>
-        <Languages
-          size={22}
-          strokeWidth={1.6}
-        />
-      </PopoverTrigger>
-      <PopoverContent className='flex w-[150px] flex-col gap-2 px-0 py-2'>
-        {locales.map((locale) => (
-          <button
-            type='button'
-            key={locale}
-            onClick={() => handleLocaleChange(locale)}
-            className='flex w-full cursor-pointer items-center gap-2 px-4 py-2 text-left text-sm transition-colors hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 active:bg-gray-200 dark:active:bg-gray-700 dark:hover:bg-gray-800'
+    <div className={cn(className)}>
+      <Select
+        value={selectedLocale}
+        onValueChange={handleLocaleChange}
+      >
+        <SelectTrigger className='w-[140px] border-none bg-transparent shadow-none focus:ring-0 focus:ring-offset-0 focus-visible:border-none focus-visible:ring-0'>
+          <span className='text-xl'>
+            {selectedLocale === 'en' ? '🇺🇸' : '🇨🇳'}
+          </span>
+          <SelectValue placeholder={localeMap[selectedLocale]} />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem
+            value='en'
+            className='cursor-pointer'
           >
-            <span className='size-5 flex-shrink-0 scale-125'>
-              {locale === 'zh' ? '🇨🇳' : '🇬🇧'}
-            </span>
-            <span className='flex-grow font-medium'>{localeMap[locale]}</span>
-            {locale === currentLocale && (
-              <Check
-                className='size-5'
-                strokeWidth={2}
-              />
-            )}
-          </button>
-        ))}
-      </PopoverContent>
-    </Popover>
+            English
+          </SelectItem>
+          <SelectItem
+            value='zh'
+            className='cursor-pointer'
+          >
+            简体中文
+          </SelectItem>
+        </SelectContent>
+      </Select>
+    </div>
   )
 }

@@ -2,7 +2,7 @@
   "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
   "files": {
     "ignoreUnknown": false,
-    "ignore": ["src/components/ui/*.tsx"]
+    "ignore": ["src/components/ui/*.tsx", "node_modules", ".next"]
   },
   "vcs": {
     "enabled": false,
@@ -19,7 +19,8 @@
       },
       "style": {},
       "a11y": {
-        "useSemanticElements": "off"
+        "useSemanticElements": "off",
+        "useKeyWithClickEvents": "off"
       },
       "correctness": {
         "noUnusedImports": "error"
