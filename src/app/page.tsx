@@ -1,12 +1,15 @@
+import { getTranslations } from 'next-intl/server'
 import Link from 'next/link'
-
 import { LatestPost } from '~/app/_components/post'
 import { Bear } from '~/components/bear'
+import { LanguageToggle } from '~/components/language/toggle'
 import { ThemeToggle } from '~/components/theme/toggle'
 import { HydrateClient, api } from '~/trpc/server'
 
 export default async function Home() {
   const hello = await api.post.hello({ text: 'from tRPC' })
+
+  const t = await getTranslations('HomePage')
 
   void api.post.getLatest.prefetch()
 
@@ -17,6 +20,10 @@ export default async function Home() {
           <h1 className='font-extrabold text-5xl tracking-tight sm:text-[5rem]'>
             Create <span className='text-[hsl(280,100%,70%)]'>T3</span> App
           </h1>
+
+          <h1>{t('title')}</h1>
+
+          <LanguageToggle />
 
           <ThemeToggle />
 
