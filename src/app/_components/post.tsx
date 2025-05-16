@@ -23,6 +23,7 @@ export function LatestPost() {
       ) : (
         <p>You have no posts yet.</p>
       )}
+
       <form
         onSubmit={(e) => {
           e.preventDefault()
