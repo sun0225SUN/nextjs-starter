@@ -30,8 +30,18 @@ export function LanguageToggle() {
         <SelectValue placeholder={t(locale)} />
       </SelectTrigger>
       <SelectContent>
-        <SelectItem value='en'>{t('en')}</SelectItem>
-        <SelectItem value='zh'>{t('zh')}</SelectItem>
+        <SelectItem
+          className='cursor-pointer'
+          value='en'
+        >
+          {t('en')}
+        </SelectItem>
+        <SelectItem
+          className='cursor-pointer'
+          value='zh'
+        >
+          {t('zh')}
+        </SelectItem>
       </SelectContent>
     </Select>
   )
