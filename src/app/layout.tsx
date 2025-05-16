@@ -3,6 +3,8 @@ import '~/styles/globals.css'
 import type { Metadata } from 'next'
 import { Geist } from 'next/font/google'
 
+import { NextIntlClientProvider } from 'next-intl'
+import { getLocale } from 'next-intl/server'
 import { ThemeProvider } from '~/components/theme/provider'
 import { TRPCReactProvider } from '~/trpc/react'
 
@@ -17,25 +19,29 @@ const geist = Geist({
   variable: '--font-geist-sans',
 })
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  const locale = await getLocale()
+
   return (
     <html
-      lang='en'
+      lang={locale}
       suppressHydrationWarning
       className={`${geist.variable}`}
     >
       <body>
         <TRPCReactProvider>
-          <ThemeProvider
-            attribute='class'
-            defaultTheme='system'
-            enableSystem
-            disableTransitionOnChange
-          >
-            {children}
-          </ThemeProvider>
+          <NextIntlClientProvider>
+            <ThemeProvider
+              attribute='class'
+              defaultTheme='system'
+              enableSystem
+              disableTransitionOnChange
+            >
+              {children}
+            </ThemeProvider>
+          </NextIntlClientProvider>
         </TRPCReactProvider>
       </body>
     </html>
