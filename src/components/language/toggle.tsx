@@ -10,7 +10,7 @@ import {
   SelectValue,
 } from '~/components/ui/select'
 import type { Locale } from '~/i18n/config'
-import { setUserLocale } from '~/server/local'
+import { setUserLocale } from '~/server/locale'
 
 export function LanguageToggle() {
   const t = useTranslations('Language')
@@ -30,8 +30,18 @@ export function LanguageToggle() {
         <SelectValue placeholder={t(locale)} />
       </SelectTrigger>
       <SelectContent>
-        <SelectItem value='en'>{t('en')}</SelectItem>
-        <SelectItem value='zh'>{t('zh')}</SelectItem>
+        <SelectItem
+          className='cursor-pointer'
+          value='en'
+        >
+          {t('en')}
+        </SelectItem>
+        <SelectItem
+          className='cursor-pointer'
+          value='zh'
+        >
+          {t('zh')}
+        </SelectItem>
       </SelectContent>
     </Select>
   )
