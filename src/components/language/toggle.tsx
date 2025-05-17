@@ -10,7 +10,7 @@ import {
   SelectValue,
 } from '~/components/ui/select'
 import type { Locale } from '~/i18n/config'
-import { setUserLocale } from '~/server/local'
+import { setUserLocale } from '~/server/locale'
 
 export function LanguageToggle() {
   const t = useTranslations('Language')
