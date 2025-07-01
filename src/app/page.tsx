@@ -4,6 +4,7 @@ import { Bear } from '~/components/bear'
 import { LanguageToggle } from '~/components/language/toggle'
 import { LatestPost } from '~/components/post'
 import { ThemeToggle } from '~/components/theme/toggle'
+import { Toast } from '~/components/toast'
 import { getServerSession } from '~/lib/auth'
 import { api, HydrateClient } from '~/trpc/server'
 
@@ -22,6 +23,7 @@ export default async function HomePage() {
         <LanguageToggle />
         <LatestPost />
         <Bear />
+        <Toast />
       </main>
     </HydrateClient>
   )
