@@ -44,7 +44,7 @@
     "zustand": "^5.0.5"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.0.5",
+    "@biomejs/biome": "2.0.6",
     "@tailwindcss/postcss": "^4.1.8",
     "@types/node": "^24.0.3",
     "@types/react": "^19.1.6",
