@@ -3,7 +3,7 @@ import { Bear } from '~/components/bear'
 import { LanguageToggle } from '~/components/language/toggle'
 import { LatestPost } from '~/components/post'
 import { ThemeToggle } from '~/components/theme/toggle'
-import { HydrateClient, api } from '~/trpc/server'
+import { api, HydrateClient } from '~/trpc/server'
 
 export default async function Home() {
   const hello = await api.post.hello({ text: 'from tRPC' })

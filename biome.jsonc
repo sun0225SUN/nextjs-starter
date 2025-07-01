@@ -1,8 +1,8 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.0.6/schema.json",
   "files": {
     "ignoreUnknown": false,
-    "ignore": ["src/components/ui/*.tsx", "node_modules", ".next"]
+    "experimentalScannerIgnores": ["src/components/ui/**"]
   },
   "vcs": {
     "enabled": false,
@@ -52,9 +52,6 @@
     "attributePosition": "auto",
     "useEditorconfig": false
   },
-  "organizeImports": {
-    "enabled": true
-  },
   "javascript": {
     "formatter": {
       "enabled": true,
@@ -97,5 +94,16 @@
       "lineWidth": 80,
       "quoteStyle": "single"
     }
-  }
+  },
+  "overrides": [
+    {
+      "includes": ["src/components/ui/**"],
+      "linter": {
+        "enabled": false
+      },
+      "formatter": {
+        "enabled": false
+      }
+    }
+  ]
 }

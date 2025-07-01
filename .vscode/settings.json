@@ -41,20 +41,5 @@
   "[css]": {
     "editor.defaultFormatter": "biomejs.biome"
   },
-  "cSpell.words": [
-    "contentlayer",
-    "createwise",
-    "lefthook",
-    "markmap",
-    "mindmap",
-    "shownotes",
-    "supabase",
-    "toploader",
-    "turbopack",
-    "umami",
-    "vidstack",
-    "wavesurfer",
-    "youtu"
-  ],
   "i18n-ally.localesPaths": ["messages", "src/i18n", "src/components/language"]
 }
