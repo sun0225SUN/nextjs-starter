@@ -4,6 +4,8 @@ import { Geist } from 'next/font/google'
 import { NextIntlClientProvider } from 'next-intl'
 import { getLocale } from 'next-intl/server'
 import { ThemeProvider } from '~/components/theme/provider'
+import { ThemeToastContainer } from '~/components/theme/toast-container'
+import { TopLoader } from '~/components/top-loader'
 import { cn } from '~/lib/utils'
 import { TRPCReactProvider } from '~/trpc/react'
 
@@ -38,6 +40,8 @@ export default async function RootLayout({
               enableSystem
               disableTransitionOnChange
             >
+              <TopLoader />
+              <ThemeToastContainer />
               {children}
             </ThemeProvider>
           </NextIntlClientProvider>
