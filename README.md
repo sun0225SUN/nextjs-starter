@@ -4,6 +4,7 @@
 - [Prisma](https://prisma.io)
 - [Tailwind CSS](https://tailwindcss.com)
 - [tRPC](https://trpc.io)
+- [Better Auth](https://www.better-auth.com)
 
 ## Develop
 
@@ -11,8 +12,6 @@
 
 ```bash
 ./start-database.sh
-
-bun run db:generate
 
 bun run db:migrate
 ```

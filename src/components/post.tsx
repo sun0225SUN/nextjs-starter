@@ -1,11 +1,13 @@
 'use client'
 
+import { useTranslations } from 'next-intl'
 import { useState } from 'react'
 import { Button } from '~/components/ui/button'
 import { Input } from '~/components/ui/input'
 import { api } from '~/trpc/react'
 
 export function LatestPost() {
+  const t = useTranslations('Post')
   const [latestPost] = api.post.getLatest.useSuspenseQuery()
 
   const utils = api.useUtils()
@@ -18,22 +20,24 @@ export function LatestPost() {
   })
 
   return (
-    <div className='w-full max-w-xs'>
+    <div className='flex w-full flex-col items-center justify-center'>
       <form
         onSubmit={(e) => {
           e.preventDefault()
           createPost.mutate({ name })
         }}
-        className='flex flex-col gap-4'
+        className='flex flex-col gap-6 text-center'
       >
         {latestPost ? (
-          <p className='truncate'>Your most recent post: {latestPost.name}</p>
+          <p className='truncate'>
+            {t('latestPost', { name: latestPost.name })}
+          </p>
         ) : (
-          <p>You have no posts yet.</p>
+          <p>{t('noPost')}</p>
         )}
         <Input
           type='text'
-          placeholder='Title'
+          placeholder={t('titlePlaceholder')}
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
@@ -42,7 +46,7 @@ export function LatestPost() {
           type='submit'
           disabled={createPost.isPending}
         >
-          {createPost.isPending ? 'Submitting...' : 'Submit'}
+          {createPost.isPending ? t('submitting') : t('submit')}
         </Button>
       </form>
     </div>

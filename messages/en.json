@@ -5,5 +5,46 @@
   "Language": {
     "en": "English",
     "zh": "简体中文"
+  },
+  "Post": {
+    "latestPost": "Your most recent post: {name}",
+    "noPost": "You have no posts yet.",
+    "titlePlaceholder": "Title",
+    "submitting": "Submitting...",
+    "submit": "Submit"
+  },
+  "Auth": {
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "email": "Email",
+    "password": "Password",
+    "username": "Username",
+    "loginLoading": "Logging in...",
+    "registerLoading": "Registering...",
+    "loginError": "Login failed, please check your email and password",
+    "registerError": "Registration failed, please check your input",
+    "networkError": "Network error, please try again later",
+    "emailInvalid": "Please enter a valid email address",
+    "passwordRequired": "Please enter your password",
+    "usernameRequired": "Username must be between 2-50 characters",
+    "passwordRequirements": {
+      "length": "Password must be at least 8 characters",
+      "uppercase": "Password must contain at least one uppercase letter",
+      "lowercase": "Password must contain at least one lowercase letter",
+      "number": "Password must contain at least one number"
+    },
+    "autoLoginFailed": "Auto login failed, please try to login manually",
+    "togglePassword": "Toggle password visibility",
+    "dontHaveAccount": "Don't have an account?",
+    "alreadyHaveAccount": "Already have an account?",
+    "loginDescription": "Enter your email below to login to your account",
+    "registerDescription": "Enter your details below to create your account",
+    "emailPlaceholder": "m@example.com",
+    "usernamePlaceholder": "Enter your name",
+    "passwordPlaceholder": "Enter your password",
+    "forgotPassword": "Forgot password?",
+    "loginWithGoogle": "Login with Google",
+    "registerWithGoogle": "Register with Google"
   }
 }

@@ -5,5 +5,46 @@
   "Language": {
     "en": "English",
     "zh": "简体中文"
+  },
+  "Post": {
+    "latestPost": "你最近的帖子：{name}",
+    "noPost": "你还没有发布任何帖子。",
+    "titlePlaceholder": "标题",
+    "submitting": "提交中...",
+    "submit": "提交"
+  },
+  "Auth": {
+    "login": "登录",
+    "register": "注册",
+    "logout": "退出登录",
+    "email": "邮箱",
+    "password": "密码",
+    "username": "用户名",
+    "loginLoading": "登录中...",
+    "registerLoading": "注册中...",
+    "loginError": "登录失败，请检查邮箱和密码",
+    "registerError": "注册失败，请检查输入信息",
+    "networkError": "网络错误，请稍后重试",
+    "emailInvalid": "请输入有效的邮箱地址",
+    "passwordRequired": "请输入密码",
+    "usernameRequired": "用户名必须在2-50个字符之间",
+    "passwordRequirements": {
+      "length": "密码至少需要8个字符",
+      "uppercase": "密码需要包含至少一个大写字母",
+      "lowercase": "密码需要包含至少一个小写字母",
+      "number": "密码需要包含至少一个数字"
+    },
+    "autoLoginFailed": "自动登录失败，请尝试手动登录",
+    "togglePassword": "切换密码可见性",
+    "dontHaveAccount": "还没有账号？",
+    "alreadyHaveAccount": "已有账号？",
+    "loginDescription": "请输入您的邮箱和密码登录",
+    "registerDescription": "请填写以下信息完成注册",
+    "emailPlaceholder": "请输入邮箱地址",
+    "usernamePlaceholder": "请输入用户名",
+    "passwordPlaceholder": "请输入密码",
+    "forgotPassword": "忘记密码？",
+    "loginWithGoogle": "使用 Google 账号登录",
+    "registerWithGoogle": "使用 Google 账号注册"
   }
 }

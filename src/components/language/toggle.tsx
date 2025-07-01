@@ -25,7 +25,10 @@ export function LanguageToggle() {
   }
 
   return (
-    <Select onValueChange={handleLocaleChange}>
+    <Select
+      onValueChange={handleLocaleChange}
+      defaultValue={locale}
+    >
       <SelectTrigger className='w-[180px]'>
         <SelectValue placeholder={t(locale)} />
       </SelectTrigger>
